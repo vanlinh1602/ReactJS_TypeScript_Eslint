@@ -1,16 +1,18 @@
 import React from "react";
+import CustomInfo from "./component/CustomInfo.tsx";
+import { dataUser } from './models/userInfo.tsx'
 
 function App() {
 
-  type WindowStates = "open" | "closed" | "minimized";
-
-  const getWindowStates = (temp : WindowStates) => {
-    return temp;
-  }
-  const tmp = getWindowStates("closed");
   return (
     <div className="App">
-      <h1>{tmp}</h1>
+      {dataUser.map(items =>
+        <CustomInfo
+          key={items.age}
+          name={items.name}
+          age={items.age}
+        />
+      )}
     </div>
   );
 }
