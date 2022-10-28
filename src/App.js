@@ -1,18 +1,11 @@
 import React from "react";
-import CustomInfo from "./component/CustomInfo.tsx";
-import { dataUser } from './models/userInfo.tsx'
+import { Counter } from "./features/counter/Counter";
 
 function App() {
 
   return (
     <div className="App">
-      {dataUser.map(items =>
-        <CustomInfo
-          key={items.age}
-          name={items.name}
-          age={items.age}
-        />
-      )}
+      <Counter/>
     </div>
   );
 }
